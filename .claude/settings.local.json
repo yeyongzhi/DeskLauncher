@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:RUSTUP_HOME=\"E:\\\\.rustup\"; $env:CARGO_HOME=\"E:\\\\.cargo\"; & \"E:\\\\.cargo\\\\bin\\\\rustup.exe\" toolchain install stable 2>&1)"
+    ]
+  }
+}
