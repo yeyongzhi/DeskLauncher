@@ -9,8 +9,9 @@ const props = defineProps<{
 
 <template>
   <div
-    data-slot="card-content"
-    :class="cn('px-4', props.class)"
+    role="list"
+    data-slot="item-group"
+    :class="cn('group/item-group flex flex-col', props.class)"
   >
     <slot />
   </div>

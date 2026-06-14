@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Home, Cpu } from '@lucide/vue'
+import { Home, Cpu, Package2 } from '@lucide/vue'
 import { RouterLink, useRoute } from 'vue-router'
 import {
     SidebarMenu,
@@ -12,6 +12,7 @@ const route = useRoute()
 const items = [
     { to: '/', name: 'home', icon: Home, label: '主页' },
     { to: '/hardware', name: 'hardware', icon: Cpu, label: '硬件信息' },
+    { to: '/software', name: 'software', icon: Package2, label: '已安装软件' },
 ]
 </script>
 

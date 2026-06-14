@@ -4,7 +4,7 @@ import { invoke } from '@tauri-apps/api/core'
 import { RefreshCw, Copy, Check } from '@lucide/vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Segmented from '@/components/common/Segmented/index.vue'
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Loading from '@/components/common/loading/index.vue'
@@ -158,13 +158,7 @@ onMounted(fetchInfo)
         <div class="flex items-center justify-between shrink-0">
             <div class="flex flex-col items-start gap-3">
                 <div v-if="info" class="text-2xl font-bold text-foreground">🖥️ {{ info.computer_name }}</div>
-                <Tabs v-model="activeTab">
-                    <TabsList>
-                        <TabsTrigger class="px-4" v-for="tab in tabDefs" :key="tab.value" :value="tab.value">
-                            {{ tab.label }}
-                        </TabsTrigger>
-                    </TabsList>
-                </Tabs>
+                <Segmented v-model="activeTab" :options="tabDefs" />
             </div>
             <div class="flex items-center gap-2">
                 <Button variant="ghost" size="sm" :disabled="loading" @click="fetchInfo">

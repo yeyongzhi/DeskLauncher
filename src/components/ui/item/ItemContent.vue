@@ -9,8 +9,8 @@ const props = defineProps<{
 
 <template>
   <div
-    data-slot="card-content"
-    :class="cn('px-4', props.class)"
+    data-slot="item-content"
+    :class="cn('flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none', props.class)"
   >
     <slot />
   </div>
